@@ -28,6 +28,7 @@ azure ad sp create -n $app --cert-value "$cert" >x1
 
 
 tenantId=$(azure account show | grep Tenant | sed 's/^.*[: ]//g')
+# this assumes the 1st subscription, you can hardcode this as well...find out which subscription by doing: azure account list
 subscription=$(azure account show | grep ID | grep -v Tenant | sed 's/^.*[: ]//')
 
 
